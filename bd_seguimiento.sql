@@ -66,8 +66,7 @@ CREATE TABLE `recepcion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 CREATE TABLE `responsable` (
-  `id_responsable` int(11) NOT NULL,
-  `ci` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `ci_responsable` int(11) NOT NULL,
   `nombres` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `paterno` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `materno` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -76,7 +75,7 @@ CREATE TABLE `responsable` (
   `correo` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `item` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_responsable`)
+  PRIMARY KEY (`ci_responsable`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 CREATE TABLE `rol` (
@@ -121,36 +120,36 @@ CREATE TABLE `validacion` (
 
 ALTER TABLE `correcion`
 ADD CONSTRAINT `correcion_ibfk_1` FOREIGN KEY (`id_observacion`) REFERENCES `observacion` (`id_observacion`),
-ADD CONSTRAINT `correcion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `correcion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 ALTER TABLE `egresado`
 ADD CONSTRAINT `egresado_ibfk_1` FOREIGN KEY (`id_carrera`) REFERENCES `carrera` (`id_carrera`) ON UPDATE CASCADE;
 
 ALTER TABLE `entrega`
 ADD CONSTRAINT `entrega_ibfk_1` FOREIGN KEY (`id_tramite`) REFERENCES `tramite` (`id_tramite`),
-ADD CONSTRAINT `entrega_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `entrega_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 ALTER TABLE `observacion`
 ADD CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_tramite`) REFERENCES `tramite` (`id_tramite`),
-ADD CONSTRAINT `observacion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `observacion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 ALTER TABLE `recepcion`
-ADD CONSTRAINT `recepcion_ibfk_1` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`),
+ADD CONSTRAINT `recepcion_ibfk_1` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`),
 ADD CONSTRAINT `recepcion_ibfk_2` FOREIGN KEY (`id_tramite`) REFERENCES `tramite` (`id_tramite`);
 
 ALTER TABLE `rol`
 ADD CONSTRAINT `rol_ibfk_1` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`),
-ADD CONSTRAINT `rol_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `rol_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 ALTER TABLE `tramite`
 ADD CONSTRAINT `tramite_ibfk_1` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`),
 ADD CONSTRAINT `tramite_ibfk_2` FOREIGN KEY (`id_egresado`) REFERENCES `egresado` (`id_egresado`),
 ADD CONSTRAINT `tramite_ibfk_3` FOREIGN KEY (`id_gestion`) REFERENCES `gestion` (`id_gestion`),
-ADD CONSTRAINT `tramite_ibfk_4` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `tramite_ibfk_4` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 ALTER TABLE `validacion`
 ADD CONSTRAINT `validacion_ibfk_1` FOREIGN KEY (`id_tramite`) REFERENCES `tramite` (`id_tramite`),
-ADD CONSTRAINT `validacion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`id_responsable`);
+ADD CONSTRAINT `validacion_ibfk_2` FOREIGN KEY (`id_encargado`) REFERENCES `responsable` (`ci_responsable`);
 
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
