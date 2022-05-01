@@ -10,21 +10,29 @@
 <div class="row">
 <div class="col-md-6">
 		<h2><center>Iniciar Sesion</center></h2>
-
-		<br>
 <br>
-<br>
-		<form role="form" name="login" action="php/login.php" method="post">
+
+		<form role="form" name="login" action="tramites.php" method="post">
+
+
+		<center><table>
+			<tr>
 		  <div class="form-group">
-		    <label for="usuario">Usuario</label>
-		    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de usuario">
-		  </div>
-		  <div class="form-group">
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a">
+		  <td WIDTH="190" HEIGHT="50"><FONT COLOR="BLUE"><label for="usuario">Usuario</label></td>
+		  <td> <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese usuario"></td>
+			</tr>
 		  </div>
 
-		  <center> <button type="submit" class="btn btn-default">Acceder</button></center>
+		  <tr>
+		  <div class="form-group">
+		  <td WIDTH="190" HEIGHT="50"><FONT COLOR="BLUE"> <label for="password">Contraseña </label></td>
+		  <td>  <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contrase&ntilde;a"></td>
+			</tr>
+		  </div>
+		</table> </center>
+<br>
+
+          <center> <button href="./tramites.php">Consultar</button></center>
 		</form>
 </div>
 </div>

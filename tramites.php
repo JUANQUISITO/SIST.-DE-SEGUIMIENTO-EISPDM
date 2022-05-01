@@ -1,24 +1,30 @@
-<?php
-session_start();
-if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
-	print "<script>alert(\"Acceso invalido!\");window.location='login.php';</script>";
-}
-
-?>
+<?php session_start(); ?>
 <html>
 	<head>
-		<title>.: Tramite :.</title>
+		<title>REGISTROS</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
 	<body>
-	<?php include "php/navbar.php"; ?>
+	<?php include "php/menu2.php"; ?>
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-		<h2>Bienvenido al control de TRAMITE</h2>
+		<h2><center>TRAMITES RECIENTES</center></h2>
+<br>
+<br>
+<br>
 
+		<form role="form" name="login" action="php/login.php" method="post">
+		  <div class="form-group">
+		  
+
+
+
+		  
+		    		</form>
 </div>
 </div>
 </div>
+		<script src="js/valida_login.js"></script>
 	</body>
 </html>

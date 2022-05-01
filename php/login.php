@@ -10,7 +10,7 @@ if(!empty($_POST)){
 			$sql1= "select * from responsable where usuario=\"$_POST[usuario]\"  and password=\"$_POST[password]\" ";
 			$query = $con->query($sql1);
 			while ($r=$query->fetch_array()) {
-				$user_id=$r["encargado"];
+				$user_id=$r["user_id"];
 				break;
 			}
 			if($user_id==null){

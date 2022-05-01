@@ -16,11 +16,11 @@
 
 		<form role="form" name="login" action="estado_tramite.php" method="post">
 		  <div class="form-group">
-		    <label for="usuario">Ingrese Número C.I.</label>
-		    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de usuario">
+		    <label for="usuario">Cedula de Identidad:</label>
+		    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su C.I.">
 		  </div>
 		  <div class="form-group">
-		    <label for="password">Ingrese Fecha de Nacimiento </label>
+		    <label for="password">Fecha de Nacimiento; </label>
 		    <input type="date" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a">
 		  </div>
 
