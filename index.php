@@ -3,7 +3,7 @@ session_start();
 ?>
 <html>
 	<head>
-		<title>.: I.T."E.I.S.P.D.M" :.</title>
+		<title>.: EISPDM :.</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
 	<body>
@@ -13,7 +13,7 @@ session_start();
 	<div class="row">
 	<div class="col-md-12">
 	<a>
-      <img src="img/blog1.jpg" width="800" height="600">
+	<center><img src="img/blog1.jpg" width="800" height="600"></center>
     </a>
 
 	</div>

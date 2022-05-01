@@ -8,22 +8,30 @@
 	<?php include "php/menu1.php"; ?>
 <div class="container">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-10">
 		<h2><center>Consulta de tramite</center></h2>
 <br>
-<br>
-<br>
+
 
 		<form role="form" name="login" action="estado_tramite.php" method="post">
-		  <div class="form-group">
-		    <label for="usuario">Cedula de Identidad:</label>
-		    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su C.I.">
-		  </div>
-		  <div class="form-group">
-		    <label for="password">Fecha de Nacimiento; </label>
-		    <input type="date" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a">
-		  </div>
 
+		<center><table>
+		<tr>
+		  <div class="form-group">
+		  <td HEIGHT="50"> <label for="usuario">Cedula de Identidad:</label> </td>
+		  <td><input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su C.I."> </td>
+		  </div>
+		</tr>
+
+		<tr>
+		  <div class="form-group">
+		  <td HEIGHT="50"><label for="password">Fecha de Nacimiento: </label> </td>
+		  <td><input type="date" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a"> </td>
+		  </div>
+		</tr>
+		</table></center>
+
+		<br>
           <center> <button href="./estado_tramite.php">Consultar</button></center>
 		</form>
 </div>

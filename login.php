@@ -8,7 +8,7 @@
 	<?php include "php/menu1.php"; ?>
 <div class="container">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-10">
 		<h2><center>Iniciar Sesion</center></h2>
 <br>
 
@@ -18,14 +18,14 @@
 		<center><table>
 			<tr>
 		  <div class="form-group">
-		  <td WIDTH="190" HEIGHT="50"><FONT COLOR="BLUE"><label for="usuario">Usuario</label></td>
+		  <td WIDTH="100" HEIGHT="50"><FONT COLOR="BLUE"><label for="usuario">Usuario:</label></td>
 		  <td> <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese usuario"></td>
 			</tr>
 		  </div>
 
 		  <tr>
 		  <div class="form-group">
-		  <td WIDTH="190" HEIGHT="50"><FONT COLOR="BLUE"> <label for="password">Contraseña </label></td>
+		  <td WIDTH="100" HEIGHT="50"><FONT COLOR="BLUE"> <label for="password">Contraseña:</label></td>
 		  <td>  <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contrase&ntilde;a"></td>
 			</tr>
 		  </div>

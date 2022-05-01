@@ -8,7 +8,7 @@
 	<?php include "php/menu2.php"; ?>
 <div class="container">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-10">
 		<h2><center>TRAMITES RECIENTES</center></h2>
 <br>
 <br>
