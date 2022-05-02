@@ -5,9 +5,7 @@ $consulta = "SELECT t.id_tramite, CONCAT(e.nombres,' ',e.paterno,' ',e.materno) 
 FROM tramite t INNER JOIN egresado e ON e.id_egresado=t.id_egresado;";
 $respuesta = $con->query($consulta);
 ?>
-
 <html>
-
 <head>
 	<title>REGISTROS</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
