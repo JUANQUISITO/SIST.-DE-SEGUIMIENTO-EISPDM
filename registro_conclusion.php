@@ -7,9 +7,7 @@ $resultadoCarrera = mysqli_query($con, $consultaCarrera);
 
 $consultaGestion = "SELECT * FROM gestion";
 $resultadoGestion = mysqli_query($con, $consultaGestion);
-
 //var_dump($resultadoCarrera);
-
 ?>
 <html>
 
