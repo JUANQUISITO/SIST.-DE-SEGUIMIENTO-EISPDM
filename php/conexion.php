@@ -1,8 +1,8 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$db="bd_seguimiento";
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "bd_seguimiento";
 //$con = new mysqli($host,$user,$password,$db);
 
 
@@ -13,9 +13,6 @@ $con = mysqli_connect($host, $user, $password, $db);
 if (!$con) {
     die(".fallo de conexion: " . mysqli_connect_error());
 }
-echo "conexion ok";
+//echo "conexion ok";
 //mysqli_close($con);
- return $con;
-
-
-?>
+return $con;

@@ -12,14 +12,15 @@ INNER JOIN egresado e ON e.id_egresado=t.id_egresado
 WHERE e.ci = $ci AND e.fecha_nacimiento = '$fechaNacimiento'";
 
 $respuesta = mysqli_query($con, $consultaTramite);
-$fila = mysqli_fetch_array($respuesta);
-
+$filasVerificacion = mysqli_num_rows($respuesta);
 ?>
+
 <html>
 
 <head>
 	<title>Formulario de Registro</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="icon" href="data:,">
 </head>
 
 <body>
@@ -28,81 +29,92 @@ $fila = mysqli_fetch_array($respuesta);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
-				<center>
-					<h2>Estado de tramite</h2>
-				</center>
-
-				<center>
-					<table>
-						<div class="form-group">
+				<h2 class="text-center">Estado de tramite</h2>
+				<?php
+				if ($filasVerificacion > 0) {
+					$fila = mysqli_fetch_array($respuesta);
+				?>
+					<center>
+						<table>
+							<div class="form-group">
+								<tr>
+									<td WIDTH="190" HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="ci">C.I.:</label></FONT>
+									</td>
+									<td HEIGHT="50"><label for="ci"><?= $fila['ci'] ?></label></td>
+								</tr>
+							</div>
 							<tr>
-								<td WIDTH="190" HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="ci">C.I.:</label></FONT>
-								</td>
-								<td HEIGHT="50"><label for="ci"><?= $fila['ci'] ?></label></td>
+								<div class="form-group">
+									<td HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="nombres">Nombres:</label></FONT>
+									</td>
+									<td HEIGHT="50"><label for="nombres"><?= $fila['nombres'] ?></label></td>
+								</div>
 							</tr>
-						</div>
-						<tr>
-							<div class="form-group">
-								<td HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="nombres">Nombres:</label></FONT>
-								</td>
-								<td HEIGHT="50"><label for="nombres"><?= $fila['nombres'] ?></label></td>
-							</div>
-						</tr>
-						<tr>
-							<div class="form-group">
-								<td HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="paterno">Apellido Paterno:</label></FONT>
-								</td>
-								<td HEIGHT="50"><label for="paterno"><?= $fila['paterno'] ?></label></td>
-							</div>
-						</tr>
-						<tr>
-							<div class="form-group">
-								<td HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="materno">Apellido Materno:</label></FONT>
-								</td>
-								<td HEIGHT="50"> <label for="materno"><?= $fila['materno'] ?></label></td>
-							</div>
-						</tr>
-						<tr>
-							<div class="form-group">
-								<td HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="fecha_inicio">Fecha de Inicio:</label></FONT>
-								</td>
-								<td HEIGHT="50"><label for="correo"><?= $fila['fecha'] ?></label></td>
-							</div>
-						</tr>
-						<tr>
-							<div class="form-group">
-								<td HEIGHT="50">
-									<FONT COLOR="BLUE"><label for="estado">Estado:</label></FONT>
-								</td>
-								<td HEIGHT="50">
-									<?php
-									$estado = "";
-									if ($fila['estado'] == '1') {
-										$estado = "En curso";
-									} else if ($fila['estado'] == '2') {
-										$estado = "En curso";
-									} else {
-										$estado = "Observado";
-									}
-									?>
-									<FONT COLOR="RED"><label for="correo"><?= $estado ?></label></FONT>
-								</td>
-							</div>
-						</tr>
-					</table>
-				</center>
-				<center>
-					<a class="btn btn-default" href='./consultar_tramite.php'>Salir</a>
-				</center>
+							<tr>
+								<div class="form-group">
+									<td HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="paterno">Apellido Paterno:</label></FONT>
+									</td>
+									<td HEIGHT="50"><label for="paterno"><?= $fila['paterno'] ?></label></td>
+								</div>
+							</tr>
+							<tr>
+								<div class="form-group">
+									<td HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="materno">Apellido Materno:</label></FONT>
+									</td>
+									<td HEIGHT="50"> <label for="materno"><?= $fila['materno'] ?></label></td>
+								</div>
+							</tr>
+							<tr>
+								<div class="form-group">
+									<td HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="fecha_inicio">Fecha de Inicio:</label></FONT>
+									</td>
+									<td HEIGHT="50"><label for="correo"><?= $fila['fecha'] ?></label></td>
+								</div>
+							</tr>
+							<tr>
+								<div class="form-group">
+									<td HEIGHT="50">
+										<FONT COLOR="BLUE"><label for="estado">Estado:</label></FONT>
+									</td>
+									<td HEIGHT="50">
+										<?php
+										$estado = "";
+										if ($fila['estado'] == '1') {
+											$estado = "En curso";
+										} else if ($fila['estado'] == '2') {
+											$estado = "En curso";
+										} else {
+											$estado = "Observado";
+										}
+										?>
+										<FONT COLOR="RED"><label for="correo"><?= $estado ?></label></FONT>
+									</td>
+								</div>
+							</tr>
+						</table>
+					</center>
+					<center>
+						<a class="btn btn-default" href='./consultar_tramite.php'>Salir</a>
+					</center>
+				<?php
+				} else {
+					$mensaje = "No existe el dato registro del Egresado";
+					echo "<h3>$mensaje</h3>";
+				?>
+					<div class="text-center">
+						<a class="btn btn-default" href='./consultar_tramite.php'>Salir</a>
+					</div>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>
-	<!-- valida tipo de datos -->
-	<!-- <script src="js/valida_registro.js"></script> -->
+</body>
 
 </html>

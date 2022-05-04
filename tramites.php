@@ -1,11 +1,12 @@
 <?php
 session_start();
 require_once("./php/conexion.php");
-$consulta = "SELECT t.id_tramite, CONCAT(e.nombres,' ',e.paterno,' ',e.materno) AS nombres,t.estado, t.fecha 
+$consulta = "SELECT t.id_tramite,e.ci, CONCAT(e.nombres,' ',e.paterno,' ',e.materno) AS nombres,t.estado, t.fecha 
 FROM tramite t INNER JOIN egresado e ON e.id_egresado=t.id_egresado;";
 $respuesta = $con->query($consulta);
 ?>
 <html>
+
 <head>
 	<title>REGISTROS</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
@@ -16,12 +17,7 @@ $respuesta = $con->query($consulta);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
-				<h2>
-					<center>TRAMITES RECIENTES</center>
-				</h2>
-				<br>
-				<br>
-				<br>
+				<h2 class="text-center">TRAMITES RECIENTES</h2>
 				<table class="table table-border table-hover table-striped">
 					<thead class="thead-dark">
 						<tr>
@@ -40,7 +36,7 @@ $respuesta = $con->query($consulta);
 						?>
 							<tr class="">
 								<th scope="row"><?= $i ?></th>
-								<td><?= $fila['id_tramite'] ?></td>
+								<td><?= $fila['ci'] ?></td>
 								<td><?= $fila['nombres'] ?></td>
 								<?php
 								$estado = "";
@@ -64,7 +60,6 @@ $respuesta = $con->query($consulta);
 			</div>
 		</div>
 	</div>
-	<script src="js/valida_login.js"></script>
 </body>
 
 </html>

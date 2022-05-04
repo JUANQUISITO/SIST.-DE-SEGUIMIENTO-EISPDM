@@ -3,6 +3,7 @@
 
 <head>
 	<title>Consultar Tramites</title>
+	<link rel="icon" href="data:,">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 </head>
 
@@ -42,7 +43,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <script src="js/valida_login.js"></script> -->
 </body>
 
 </html>

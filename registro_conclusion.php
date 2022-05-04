@@ -123,9 +123,6 @@ $resultadoGestion = mysqli_query($con, $consultaGestion);
 			</div>
 		</div>
 	</div>
-
-	<!-- valida tipo de datos -->
-	<!-- <script src="js/valida_registro.js"></script> -->
 </body>
 
 </html>

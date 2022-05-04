@@ -1,42 +1,42 @@
 <?php session_start(); ?>
-<html>
-	<head>
-		<title>Formulario de Registro</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario de Registro</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
 	<?php include "php/menu1.php"; ?>
-<div class="container">
-<div class="row">
-<div class="col-md-10">
-		<h2><center>Iniciar Sesion</center></h2>
-<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h2 class="text-center">INICIAR SESIÓN</h2>
+				<form role="form" name="login" action="verificar.php" method="post">
+					<div class="form-group">
+						<label for="usuario">Usuario:</label>
+						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese usuario" required>
+					</div>
 
-		<form role="form" name="login" action="tramites.php" method="post">
+					<div class="form-group">
+						<label for="password">Contraseña:</label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contraseña" required>
+					</div>
 
+					<div class="form-group">
+						<button href="./tramites.php" class="btn btn-primary">Consultar</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+	</div>
+</body>
 
-		<center><table>
-			<tr>
-		  <div class="form-group">
-		  <td WIDTH="100" HEIGHT="50"><FONT COLOR="BLUE"><label for="usuario">Usuario:</label></td>
-		  <td> <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese usuario"></td>
-			</tr>
-		  </div>
-
-		  <tr>
-		  <div class="form-group">
-		  <td WIDTH="100" HEIGHT="50"><FONT COLOR="BLUE"> <label for="password">Contraseña:</label></td>
-		  <td>  <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contrase&ntilde;a"></td>
-			</tr>
-		  </div>
-		</table> </center>
-<br>
-
-          <center> <button href="./tramites.php">Consultar</button></center>
-		</form>
-</div>
-</div>
-</div>
-		<script src="js/valida_login.js"></script>
-	</body>
 </html>
